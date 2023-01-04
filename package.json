@@ -8,6 +8,7 @@
     "start": "nodemon index.js"
   },
   "dependencies": {
+    "@fastify/swagger": "^6.0.0",
     "axios": "^1.2.1",
     "fastify": "^3.29.4",
     "qs": "^6.11.0"
