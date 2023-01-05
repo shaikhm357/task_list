@@ -11,7 +11,7 @@ const {
   claimTask,
   completeTheTask,
   unclaim
-} = require('../config')
+} = require('../tasklistConfig')
 
 function tasklistRoutes(fastify, options, done) {
   fastify.get('/tasks', async (request, reply) => {
@@ -100,6 +100,13 @@ function tasklistRoutes(fastify, options, done) {
     } else {
       reply.send(task.data)
     }
+  })
+
+  fastify.get('/user', async (request, reply) => {
+    const tasklistCurrentUser = await axios(getCurrentUser(request.headers.authorization)).catch((error) => {
+      console.log(error)
+    })
+    reply.send(tasklistCurrentUser.data)
   })
 
   fastify.post('/tasks/:id/claim', async (request, reply) => {

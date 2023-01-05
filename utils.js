@@ -1,5 +1,5 @@
 const axios = require('axios')
-const { getCurrentUser, getTaskById, getKeycloakToken, getKeycloakGroup, getMembersOfGroups } = require('./config')
+const { getCurrentUser, getTaskById, getKeycloakToken, getKeycloakGroup, getMembersOfGroups } = require('./tasklistConfig')
 
 const isAuthenticatedUser = async function (token, id) {
   let isSameMember = false
