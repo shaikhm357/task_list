@@ -10,6 +10,7 @@ fastify.register(require('@fastify/swagger'), {
   }
 })
 fastify.register(require('./routes/tasklist'))
+fastify.register(require('./routes/start_process'))
 
 fastify.listen({ port: 8000 }, function (err, address) {
   if (err) {
